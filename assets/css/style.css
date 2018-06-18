@@ -1,0 +1,19 @@
+body{
+    background:linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),
+        url("../images/IMG_532501.jpg");
+	    background-size:cover;
+    /* background-image:url("../images/IMG_532501.jpg"); */
+    color: rgb(250, 234, 8);
+}
+
+#name-of-game{
+    font-family: 'Bungee Inline', cursive;
+    text-align: center;
+}
+
+.img {
+    position: relative;
+    float: left;
+  
+    
+}
