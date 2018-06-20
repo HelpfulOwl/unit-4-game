@@ -1,17 +1,87 @@
-var imgArray = ['"assets/images/boba-fett.jpg"','assets/images/Emperor.jpg','assets/images/ewok.jpg',
-'assets/images/grievous.jpg','assets/images/QuiGon.jpg','assets/images/Yoda.jpg'];
-var animal = "cat";
-// $('#char-select').append($('<img src=assets/images/boba-fett.jpg'));
+var imgID = ["#fett", "#emperor", "#ewok", "#grievous","#quigon","#solo","#yoda"];
+console.log("Array of images id "+imgID);
+   
 
-for(var i=0; i<imgArray.length; i++){
-    $('#char-select').prepend("<img id='select'>");
-    $('#char-select').addClass("img");
-    $('#select').attr("src",imgArray[i]);
+// function clickHandler(event) {
+//     console.log(event)
+// } ;
+
+var fett ={
+    health:"100",
+    power: "10"
+};
+
+var emperor = {
+    health: "80",
+    power: "20"
+};
+var charSelected = false;
+var enemySelected = false;
+// function selector(value){
+//     $(imgID[value]).on("click",function(){
+//         $(imgID[value]).detach().appendTo('#row3');
+//         charSelected = true;
+//         console.log(charSelected);
+//     });
+// }
+function toEnemySelect(){
+    $(".characters").detach().appendTo("#row3");
 }
 
-$('#select').on('click',function(){
-    $('#select').addClass("chosen");
+$("#char-select").on("click", ".characters",function(){
+    console.log("INSIDE THIS CLICK EVENT!");
+    console.log("THIS: "+ $(this).attr("id"));
+    $(this).removeClass("characters");
+    $(this).detach().appendTo("#chosen");
+    console.log($(this).attr("class"));
+    charSelected = true;
+    toEnemySelect();
+    $("#row2").hide();
     
-
-    $(".chosen").prepend("")
+ //console.log(charSelected);
 });
+
+
+function enemySelect() {
+    $("#enemy-select").on("click", ".characters",function(){
+        // $(this).removeClass("characters");
+        $(this).detach().appendTo("#enemy");
+        console.log(this);
+        // console.log($(this).attr("class"));
+        enemySelected = true;
+    });    
+ //console.log(charSelected);
+};
+
+if (charSelected === "true"){
+    enemySelect();
+}
+
+
+
+
+
+
+    // $(imgID[0]).on("click",function(){
+    //     $(imgID[0]).detach().appendTo('#row3');
+    //     charSelected = true;
+    //     console.log(charSelected);
+    // });
+
+    // $(imgID[1]).on("click",function(){
+    //     $(imgID[1]).detach().appendTo('#row3');
+    //     charSelected = true;
+    // });
+
+    // $(imgID[2]).on("click",function(){
+    //     $(imgID[2]).detach().appendTo('#row3');
+    //     charSelected = true;
+    // });
+
+    // $(imgID[3]).on("click",function(){
+    //     $(imgID[3]).detach().appendTo('#row3');
+    //     charSelected = true;
+    // });
+
+
+// $('.press-me').on('click', clickHandler)
