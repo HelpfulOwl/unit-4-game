@@ -11,9 +11,15 @@ body{
     text-align: center;
 }
 
-img {
-    position: relative;
-    float: left;
-  
-    
+
+
+figcaption{
+    text-align: center;
+    word-wrap: normal;
 }
+
+figure{
+    margin: 0 auto;
+    float: left;
+}
+
