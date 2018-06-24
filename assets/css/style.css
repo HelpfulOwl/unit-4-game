@@ -26,3 +26,11 @@ figure{
     float: left;
 }
 
+#defeated {
+    float: right;
+}
+
+.headDefEn {
+    float: right;
+}
+
